@@ -1,4 +1,4 @@
 all:
-	gcc LL1.c -o LL1
+	g++ LL1.c -o LL1
 clean:
 	rm *.exe

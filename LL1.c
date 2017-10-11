@@ -1,6 +1,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
 struct Node
 {
 	int data;
@@ -141,8 +145,48 @@ void reverseIter()
 	A=temp1;
 	
 }
+
+bool IsCharDuplication(string &s) {
+
+  bool result = false;
+  bool controlArray[256];
+  for(int i=0;i<256;i++)
+  {
+  	controlArray[i]=false;
+  }
+
+  cout<<"s.length() is"<<s.length()<<endl;
+ 
+  
+  int i=0;
+  for (string::iterator it = s.begin(); it!=s.end(); it++) {
+    int temp=(*it);
+    
+    if(controlArray[temp]==false)
+    {
+    	controlArray[temp]=true;
+    }
+    else
+    {
+    	cout<<"controlArray[temp]"<<controlArray[temp]<<endl;
+    	cout<<"find repetition @ "<<i<<endl;
+    	result=true;
+
+    }
+    
+    cout<<"i is"<<i<<endl;
+    i++;
+  }
+  
+  return result;
+}
+
+
 int main()
 {
+	string s1="hellow";
+	bool temp=IsCharDuplication(s1);
+	/*
 	int x;
 	for( x= -5 ; x<7; x++) printf("x is %d \n",x);
 	printf("hey hey\n");
@@ -152,6 +196,9 @@ int main()
 	createENode(11);
 	
 	printf("There are %d in the list \n",traverseList());
+    */
+   
+
 
 	/*delete
 	//deletehead();
@@ -171,9 +218,10 @@ int main()
 	addNodeEnd(9);
 	traverseList();
 	*/
+	/*
 	reverseIter();
 	traverseList();
-	
+	*/
 	return 0;
 }
 
