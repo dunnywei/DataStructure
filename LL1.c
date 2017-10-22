@@ -109,7 +109,21 @@ void deleteN(int _n)
 */
 void deletN(int _n)
 {
+	Node *temp1=A;
+	if (_n<2)
+	{
+		A=temp1->next;
+		free(temp1);
+		return;
+	}
 	
+	for(int i=0;i<(_n-2);i++)
+	{
+		temp1=temp1->next;
+	}
+	Node *temp2=temp1->next;
+	temp1->next=temp2->next;
+	free(temp2);
 }
 void reverseIter()
 {
@@ -184,9 +198,12 @@ bool IsCharDuplication(string &s) {
 
 int main()
 {
+	/*
+	//check the duplication of string
 	string s1="hellow";
 	bool temp=IsCharDuplication(s1);
-	/*
+	*/
+	
 	int x;
 	for( x= -5 ; x<7; x++) printf("x is %d \n",x);
 	printf("hey hey\n");
@@ -194,14 +211,21 @@ int main()
     
 	createENode(10);
 	createENode(11);
+	createENode(12);
 	
 	printf("There are %d in the list \n",traverseList());
-    */
-   
+    
+   deletN(4);
+   traverseList();
+   printf("delete first \n");
+   deletN(1);
+   traverseList();
 
 
-	/*delete
-	//deletehead();
+
+
+	/*delete old
+	deletehead();
 	deleteN(2);
 	
     printf("There are %d in the list \n",traverseList());
