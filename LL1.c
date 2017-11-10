@@ -196,19 +196,45 @@ bool IsCharDuplication(string &s) {
   return result;
 }
 
+int *obtainIntarray(int temp2,int _length)
+{
+	int *returnptr=(int*)calloc(_length,sizeof(int));
+	for(int i=0;i<_length;i++)
+	{
+		int quotient=temp2/10;
+		int remainder=temp2%10;
+		returnptr[i]=remainder;
+		
+		cout<<"returnptr[i] is "<<returnptr[i]<<" i is "<<i<<endl;
+
+		
+		temp2=quotient;
+		
+	}
+	return returnptr;
+}
+
 void testamostrong(int _temp)
 {
-   
+   /*
     int n = log10(_temp) + 1;
 	cout<<"n is "<<n<<endl;
     int i;
     int *numberArray = (int *)calloc(n, sizeof(int));
     for ( i = 0; i < n; i++, _temp /= 10 )
     {
+		cout<<"_temp is"<<_temp<<endl; 
         numberArray[i] = _temp % 10;
 		cout<<"numberArray[i] is "<<numberArray[i]<<" i is "<<i<<endl;
     }
-
+    */
+	
+	int length=floor(log10(_temp))+1;
+	cout<<"length is"<<length<<endl;
+	
+	int *temp=obtainIntarray(_temp,length);
+	
+	
 	
 	
 }
