@@ -198,37 +198,17 @@ bool IsCharDuplication(string &s) {
 
 void testamostrong(int _temp)
 {
-    int temp_store[10];
-	int _temp2=_temp;
-	int sum=0;
-	int counter=0;
-	int quotient=0;
-	int remainder=0;
-	
-	while(1)
-	{
-		double test1=(double)_temp/10;
-		cout<<"counter is "<<counter<<" test1 is "<<test1<<endl;
+   
+    int n = log10(_temp) + 1;
+	cout<<"n is "<<n<<endl;
+    int i;
+    int *numberArray = (int *)calloc(n, sizeof(int));
+    for ( i = 0; i < n; i++, _temp /= 10 )
+    {
+        numberArray[i] = _temp % 10;
+		cout<<"numberArray[i] is "<<numberArray[i]<<" i is "<<i<<endl;
+    }
 
-		if(test1<1)
-		{
-			break;
-		}
-		counter+=1;
-		_temp=(double)test1;
-		
-		
-	}//end while
-	for(int i=0;i<10;i++)
-	{
-as	f
-	for(int i=0;i<=counter;i++)
-	{
-		sum+=pow((temp_store[i]),(counter+1));
-		//printf("sum is %d \n",sum);
-
-	}
-	printf("total sum is %d \n",sum);
 	
 	
 }
