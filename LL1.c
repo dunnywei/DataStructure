@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <iostream>
 #include <string>
 
@@ -195,15 +196,79 @@ bool IsCharDuplication(string &s) {
   return result;
 }
 
+void testamostrong(int _temp)
+{
+    int temp_store[10];
+	int _temp2=_temp;
+	int sum=0;
+	int counter=0;
+	int quotient=0;
+	int remainder=0;
+	while(1)
+	{
+		remainder=_temp%10;
+	    quotient=_temp/10;
+
+		if((remainder==0)||(_temp<10))
+		{
+			if(_temp<10)
+			{
+				
+				counter+=1;
+				temp_store[counter]=remainder;
+				
+			}
+			printf("hit the break \n");
+			break;
+		}//end if
+		
+		if (quotient<10)
+		{
+			temp_store[counter]=quotient;
+		
+		    _temp=remainder;
+			
+		}else{
+			//stuck here
+		}
+		
+		
+		
+	}//end while
+	for(int i=0;i<10;i++)
+	{
+		printf("temp_store is %d with i %d \n",temp_store[i],i );
+	}
+	
+	for(int i=0;i<=counter;i++)
+	{
+		sum+=pow((temp_store[i]),(counter+1));
+		//printf("sum is %d \n",sum);
+
+	}
+	printf("total sum is %d \n",sum);
+	
+	
+}
+
 
 int main()
 {
+	int temp;
 	/*
 	//check the duplication of string
 	string s1="hellow";
 	bool temp=IsCharDuplication(s1);
 	*/
 	
+	//test amostrong number
+	
+	printf("enter a number for amstrong \n");
+	scanf("%d",&temp);
+	testamostrong(temp);
+	
+	
+	/*
 	int x;
 	for( x= -5 ; x<7; x++) printf("x is %d \n",x);
 	printf("hey hey\n");
@@ -220,7 +285,7 @@ int main()
    printf("delete first \n");
    deletN(1);
    traverseList();
-
+  */
 
 
 
