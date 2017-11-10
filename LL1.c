@@ -204,42 +204,24 @@ void testamostrong(int _temp)
 	int counter=0;
 	int quotient=0;
 	int remainder=0;
+	
 	while(1)
 	{
-		remainder=_temp%10;
-	    quotient=_temp/10;
+		double test1=(double)_temp/10;
+		cout<<"counter is "<<counter<<" test1 is "<<test1<<endl;
 
-		if((remainder==0)||(_temp<10))
+		if(test1<1)
 		{
-			if(_temp<10)
-			{
-				
-				counter+=1;
-				temp_store[counter]=remainder;
-				
-			}
-			printf("hit the break \n");
 			break;
-		}//end if
-		
-		if (quotient<10)
-		{
-			temp_store[counter]=quotient;
-		
-		    _temp=remainder;
-			
-		}else{
-			//stuck here
 		}
-		
+		counter+=1;
+		_temp=(double)test1;
 		
 		
 	}//end while
 	for(int i=0;i<10;i++)
 	{
-		printf("temp_store is %d with i %d \n",temp_store[i],i );
-	}
-	
+as	f
 	for(int i=0;i<=counter;i++)
 	{
 		sum+=pow((temp_store[i]),(counter+1));
